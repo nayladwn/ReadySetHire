@@ -1,0 +1,69 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+#root {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Ensure the main content doesn't get hidden behind footer */
+main {
+  flex: 1;
+  padding-bottom: 60px; /* reserve space for footer height */
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60px; /* consistent height */
+  background-color: #f8f9fa;
+  border-top: 1px solid #dee2e6;
+  text-align: center;
+  color: #6c757d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* Rainbow animated button */
+.rainbow-btn {
+  background: linear-gradient(
+    270deg,
+    #ff6ec4,
+    #7873f5,
+    #4ade80,
+    #facc15,
+    #f87171,
+    #ff6ec4
+  );
+  background-size: 1200% 1200%;
+  color: white !important;
+  font-weight: bold;
+  border: none;
+  transition: transform 0.2s ease-in-out;
+  animation: rainbowShift 8s ease infinite;
+}
+
+.rainbow-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.7);
+}
+
+@keyframes rainbowShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
